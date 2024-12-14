@@ -89,6 +89,13 @@ public class ProyectoFinalWindow extends JFrame {
 		menuProyecto.add(mnVentas);
 		
 		JMenuItem mntmVender = new JMenuItem("Vender");
+		mntmVender.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VenderDialog windowVenderDialog = new VenderDialog(operacionesCocina);
+				windowVenderDialog.setLocationRelativeTo(mntmVender);
+				windowVenderDialog.setVisible(true);
+			}
+		});
 		mnVentas.add(mntmVender);
 		
 		JMenu mnGenerarReportes = new JMenu("Generar reportes");
