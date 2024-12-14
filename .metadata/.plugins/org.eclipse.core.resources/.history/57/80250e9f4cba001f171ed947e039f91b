@@ -122,11 +122,6 @@ public class ConsultarCocina extends JDialog {
 		txtQuemadores.setColumns(10);
 		
 		JButton btnCerrar = new JButton("Cerrar");
-		btnCerrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
 		btnCerrar.setBounds(333, 7, 105, 27);
 		getContentPane().add(btnCerrar);
 
