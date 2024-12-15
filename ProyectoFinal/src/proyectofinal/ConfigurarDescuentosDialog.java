@@ -7,14 +7,23 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ConfigurarDescuentosDialog extends JDialog {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField tf1a5;
+	private JTextField tf6a10;
+	private JTextField tf11a15;
+	private JTextField tf15mas;
+	
+	//PORCENTAJES DE DESCUENTOS
+	private Double porcentaje1 = 7.5;
+	private Double porcentaje2 = 10.0;
+	private Double porcentaje3 = 12.5;
+	private Double porcentaje4 = 15.0;
+	
 
 	/**
 	 * Launch the application.
@@ -77,35 +86,45 @@ public class ConfigurarDescuentosDialog extends JDialog {
 		lblNewLabel_7.setBounds(277, 157, 46, 14);
 		getContentPane().add(lblNewLabel_7);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField.setBounds(152, 26, 115, 20);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		tf1a5 = new JTextField();
+		tf1a5.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tf1a5.setBounds(152, 26, 115, 20);
+		getContentPane().add(tf1a5);
+		tf1a5.setColumns(10);
+		tf1a5.setText(porcentaje1.toString()); 
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_1.setBounds(152, 67, 115, 20);
-		getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		tf6a10 = new JTextField();
+		tf6a10.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tf6a10.setBounds(152, 67, 115, 20);
+		getContentPane().add(tf6a10);
+		tf6a10.setColumns(10);
+		tf6a10.setText(porcentaje2.toString());
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_2.setBounds(152, 106, 115, 20);
-		getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		tf11a15 = new JTextField();
+		tf11a15.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tf11a15.setBounds(152, 106, 115, 20);
+		getContentPane().add(tf11a15);
+		tf11a15.setColumns(10);
+		tf11a15.setText(porcentaje3.toString()); 
 		
-		textField_3 = new JTextField();
-		textField_3.setFont(new Font("Tahoma", Font.BOLD, 12));
-		textField_3.setBounds(152, 154, 115, 20);
-		getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		tf15mas = new JTextField();
+		tf15mas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tf15mas.setBounds(152, 154, 115, 20);
+		getContentPane().add(tf15mas);
+		tf15mas.setColumns(10);
+		tf15mas.setText(porcentaje4.toString()); 
 		
 		JButton btnNewButton = new JButton("Aceptar");
 		btnNewButton.setBounds(394, 25, 110, 23);
 		getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Cancelar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+			}
+		});
 		btnNewButton_1.setBounds(394, 77, 110, 23);
 		getContentPane().add(btnNewButton_1);
 

@@ -98,11 +98,31 @@ public class ProyectoFinalWindow extends JFrame {
 		});
 		mnVentas.add(mntmVender);
 		
-		JMenu mnGenerarReportes = new JMenu("Generar reportes");
-		mnVentas.add(mnGenerarReportes);
+		JMenuItem mntmReportes = new JMenuItem("Generar Reportes");
+		mntmReportes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				GenerarReporteDialog windowReporteDialog = new GenerarReporteDialog();
+				windowReporteDialog.setLocationRelativeTo(mntmReportes);
+				windowReporteDialog.setVisible(true);
+			}
+		});
+		mnVentas.add(mntmReportes);
 		
 		JMenu mnConfiguracion = new JMenu("Configuración");
 		menuProyecto.add(mnConfiguracion);
+		
+		JMenuItem mntmDescuentos = new JMenuItem("Configurar Descuentos");
+		mntmDescuentos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				ConfigurarDescuentosDialog windowDescuentosDialog = new ConfigurarDescuentosDialog();
+				windowDescuentosDialog.setLocationRelativeTo(mntmDescuentos);
+				windowDescuentosDialog.setVisible(true);
+			}
+		});
+		mnConfiguracion.add(mntmDescuentos);
 		
 		JMenu mnAyuda = new JMenu("Ayuda");
 		menuProyecto.add(mnAyuda);
