@@ -86,9 +86,26 @@ public class ProyectoFinalWindow extends JFrame {
 		mnMantenimiento.add(mntmConsultarCocina);
 		
 		JMenuItem mntmModificarCocina = new JMenuItem("Modificar cocina");
+		mntmModificarCocina.addActionListener(new ActionListener() {
+			
+
+			public void actionPerformed(ActionEvent e) {
+				ModificarCocinaDialog dialogModificarCocina = new ModificarCocinaDialog(operacionesCocina);
+				dialogModificarCocina.setLocationRelativeTo(mntmModificarCocina);
+				dialogModificarCocina.setVisible(true);
+			}
+		});
 		mnMantenimiento.add(mntmModificarCocina);
 		
 		JMenuItem mntmListarCocinas = new JMenuItem("Listar cocinas");
+		mntmListarCocinas.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				ListarCocinasDialog dialogListarCocinas = new ListarCocinasDialog(operacionesCocina);
+				dialogListarCocinas.setLocationRelativeTo(mntmListarCocinas);
+				dialogListarCocinas.setVisible(true);
+			}
+		});
 		mnMantenimiento.add(mntmListarCocinas);
 		
 		JMenu mnVentas = new JMenu("Ventas");

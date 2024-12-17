@@ -1,0 +1,39 @@
+package proyectofinal;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+
+import application.core.interfaces.IOperacionesCocina;
+
+public class ModificarCocinaDialog extends JDialog {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ModificarCocinaDialog dialog = new ModificarCocinaDialog();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public ModificarCocinaDialog(IOperacionesCocina operacionesCocina) {
+		setTitle("Modificar cocina");
+		setBounds(100, 100, 450, 300);
+
+	}
+
+}
