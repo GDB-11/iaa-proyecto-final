@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="proyectofinal.ModificarCocinaDialog"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="proyectofinal.ListarCocinasDialog"/>
+    <fullyQualifiedTypeName name="proyectofinal.helpers.ElementosHelper"/>
+</qualifiedTypeNameHistroy>
