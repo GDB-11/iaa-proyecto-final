@@ -102,3 +102,6 @@ $RECYCLE.BIN/
 /config/local/
 *.properties.local
 *.env
+.metadata/.log
+.metadata/version.ini
+.metadata/.plugins/org.eclipse.m2e.logback/0.log
