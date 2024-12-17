@@ -173,5 +173,16 @@ public class ProyectoFinalWindow extends JFrame {
 		
 		JMenu mnAyuda = new JMenu("Ayuda");
 		menuProyecto.add(mnAyuda);
+		
+		JMenuItem mntmAcerca = new JMenuItem("Acerca de Tienda");
+		mnAyuda.add(mntmAcerca);
+
+		mntmAcerca.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        AcercaTiendaDialog dialog = new AcercaTiendaDialog();
+		        dialog.setLocationRelativeTo(ProyectoFinalWindow.this);
+		        dialog.setVisible(true);
+		    }
+		});
 	}
 }
