@@ -1,16 +1,25 @@
 package proyectofinal;
 
-import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+import application.core.interfaces.IConfiguracion;
+import application.core.interfaces.IOperacionesCocina;
+import application.core.interfaces.IVentas;
+import infrastructure.core.models.Reporte.DatosReportePromediosMayoresMenores;
+import infrastructure.core.models.Reporte.DatosReporteVentasPorModelo;
+import infrastructure.core.models.Reporte.DatosReporteVentasPrecioPromedio;
+import infrastructure.core.models.Reporte.DatosReporteVentasVentaOptima;
+import proyectofinal.helpers.MathHelper;
 
 public class GenerarReporteDialog extends JDialog {
 
@@ -31,30 +40,11 @@ public class GenerarReporteDialog extends JDialog {
 	
 	//PROMEDIOS MAYORES Y MENORES
 	private String promediosmn = "Promedios, menores y mayores";
-		
-	
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GenerarReporteDialog dialog = new GenerarReporteDialog();
-					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-					dialog.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the dialog.
 	 */
-	public GenerarReporteDialog() {
+	public GenerarReporteDialog(IVentas ventas, IConfiguracion configuracion, IOperacionesCocina operacionesCocina) {
 		setTitle("Generar Reportes");
 		setBounds(100, 100, 536, 399);
 		getContentPane().setLayout(null);
@@ -68,99 +58,63 @@ public class GenerarReporteDialog extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				
 				//VARIABLES LOCALES
+				List<DatosReporteVentasPorModelo> datosReporteVentasPorModelo;
+				List<DatosReporteVentasVentaOptima> datosReporteVentasVentaOptima;
+				List<DatosReporteVentasPrecioPromedio> datosReporteVentasPrecioPromedio;
+				DatosReportePromediosMayoresMenores datosReportePromediosMayoresMenores;
 				String reporte;
 				
 				//ENTRADA DE DATOS
 				reporte = cbTipoReporte.getSelectedItem().toString();
 				
 				//IMPRIMIR RESULTADOS
-				
 				if (reporte.equals("[--Seleccione--]")) {
 				    textArea.setText("Por favor, seleccione un tipo de reporte.");
 				
 				}else if (reporte == reporteinicial) {
-					
+					datosReporteVentasPorModelo = ventas.obtenerDatosReporteVentasPorModelo();
 					textArea.setText("VENTAS POR MODELO" + "\n\n");
-					textArea.append("Modelo			: Mabe EMP6120PG0 " + "\n");
-					textArea.append("Cantidad de Ventas		:  " + "\n");
-					textArea.append("Cantidad de Unidades Vendidas	:  " + "\n");
-					textArea.append("Importe total Vendido		:  " + "\n");
-					textArea.append("Aporte a la Cuota Diaria		:  " + "\n\n");
-					
-					textArea.append("Modelo			: Indurama Parma " + "\n");
-					textArea.append("Cantidad de Ventas		:  " + "\n");
-					textArea.append("Cantidad de Unidades Vendidas	:  " + "\n");
-					textArea.append("Importe total Vendido		:  " + "\n");
-					textArea.append("Aporte a la Cuota Diaria		:  " + "\n\n");
-					
-					textArea.append("Modelo			: Sole COSOL027 " + "\n");
-					textArea.append("Cantidad de Ventas		:  " + "\n");
-					textArea.append("Cantidad de Unidades Vendidas	:  " + "\n");
-					textArea.append("Importe total Vendido		:  " + "\n");
-					textArea.append("Aporte a la Cuota Diaria		:  " + "\n\n");
-					
-					textArea.append("Modelo			: Coldex CX602 " + "\n");
-					textArea.append("Cantidad de Ventas		:  " + "\n");
-					textArea.append("Cantidad de Unidades Vendidas	:  " + "\n");
-					textArea.append("Importe total Vendido		:  " + "\n");
-					textArea.append("Aporte a la Cuota Diaria		:  " + "\n\n");
-					
-					textArea.append("Modelo			: Reco Dakota " + "\n");
-					textArea.append("Cantidad de Ventas		:  " + "\n");
-					textArea.append("Cantidad de Unidades Vendidas	:  " + "\n");
-					textArea.append("Importe total Vendido		:  " + "\n");
-					textArea.append("Aporte a la Cuota Diaria		:  " + "\n");
 
+					for (int i = 0; i < datosReporteVentasPorModelo.size(); i++) {
+						DatosReporteVentasPorModelo datos = datosReporteVentasPorModelo.get(i);
 
-					
+						textArea.append("Modelo\t\t: " + datos.getModelo() + "\n");
+						textArea.append("Cantidad de Ventas\t: " + datos.getCantidadVentas() + "\n");
+						textArea.append("Cantidad de Unidades Vendidas: " + datos.getCantidadUnidadesVendidas() + "\n");
+						textArea.append("Importe total Vendido\t: S/ " + MathHelper.formatDecimal(datos.getImporteTotalVendido()) + "\n");
+						textArea.append("Aporte a la Cuota Diaria\t: " + MathHelper.formatPercentage(datos.getAporteCuotaDiaria(configuracion.obtenerCuotaDiariaVentas())) + "\n\n");
+					}
 				}else if (reporte == ventasoptimas){
-					
+					datosReporteVentasVentaOptima = ventas.obtenerDatosReporteVentasVentaOptima();
 					textArea.setText("VENTAS EN RELACION A LA VENTA OPTIMA" + "\n\n");
-					textArea.append("Modelo			: Mabe EMP6120PG0 " + "\n");
-					textArea.append("Cantidad de Unidades vendidas	:  " + "\n\n");
-					
-					textArea.append("Modelo			: Indurama Parma " + "\n");
-					textArea.append("Cantidad de Unidades vendidas	:  " + "\n\n");
-					
-					textArea.append("Modelo			: Sole COSOL027 " + "\n");
-					textArea.append("Cantidad de Unidades vendidas	:  " + "\n\n");
-					
-					textArea.append("Modelo			: Coldex CX602 " + "\n");
-					textArea.append("Cantidad de Unidades vendidas	:  " + "\n\n");
-					
-					textArea.append("Modelo			: Reco Dakota " + "\n");
-					textArea.append("Cantidad de Unidades vendidas	:  " + "\n");		
-					
-					
+
+					for (int i = 0; i < datosReporteVentasVentaOptima.size(); i++) {
+						DatosReporteVentasVentaOptima datos = datosReporteVentasVentaOptima.get(i);
+
+						textArea.append("Modelo\t\t: " + datos.getModelo() + "\n");
+						textArea.append("Cantidad de Unidades vendidas: " + datos.getCantidadVentas(configuracion.obtenerCantidadOptimaVentas())+ "\n\n");
+					}
 				}else if (reporte == preciopromedio) {
-					
+					datosReporteVentasPrecioPromedio = ventas.obtenerDatosReporteVentasPrecioPromedio();
 					textArea.setText("PRECIOS EN RELACIÓN AL PRECIO PROMEDIO" + "\n\n");
-					textArea.append("Modelo		: Mabe EMP6120PG0 " + "\n");
-					textArea.append("Precio		:  " + "\n\n");
-					
-					textArea.append("Modelo		: Indurama Parma " + "\n");
-					textArea.append("Precio		:  " + "\n\n");
-					
-					textArea.append("Modelo		: Sole COSOL027 " + "\n");
-					textArea.append("Precio		:  " + "\n\n");
-					
-					textArea.append("Modelo		: Coldex CX602 " + "\n");
-					textArea.append("Precio		:  " + "\n\n");
-					
-					textArea.append("Modelo		: Reco Dakota " + "\n");
-					textArea.append("Precio		:  " + "\n");		
-					
+
+					for (int i = 0; i < datosReporteVentasPrecioPromedio.size(); i++) {
+						DatosReporteVentasPrecioPromedio datos = datosReporteVentasPrecioPromedio.get(i);
+
+						textArea.append("Modelo\t: " + datos.getModelo() + "\n");
+						textArea.append("Precio\t: " + datos.getPrecio(operacionesCocina.obtenerPrecioPromedio()) + "\n\n");
+					}
 					
 				}else if (reporte == promediosmn) {
-					
+					datosReportePromediosMayoresMenores = ventas.obtenerDatosReportePromediosMayoresMenores();
+
 					textArea.setText("PROMEDIOS, MENORES Y MAYORES" + "\n\n");
-					textArea.append("Precio Promedio	:" + "\n");
-					textArea.append("Precio menor		:  " + "\n");
-					textArea.append("Precio mayor		:" + "\n\n");
-					
-					textArea.append("Ancho Promedio	:  " + "\n");
-					textArea.append("Ancho menor		:" + "\n");
-					textArea.append("Ancho mayor		:  " + "\n\n");
+					textArea.append("Precio Promedio\t: S/ " + datosReportePromediosMayoresMenores.getPrecioPromedio() + "\n");
+					textArea.append("Precio menor\t: S/ " + datosReportePromediosMayoresMenores.getPrecioMenor() + "\n");
+					textArea.append("Precio mayor\t: S/ " + datosReportePromediosMayoresMenores.getPrecioMayor() + "\n\n");					
+					textArea.append("Ancho Promedio\t: " + datosReportePromediosMayoresMenores.getAnchoPromedio() + "\n");
+					textArea.append("Ancho menor\t: " + datosReportePromediosMayoresMenores.getAnchoMenor() + "\n");
+					textArea.append("Ancho mayor\t: " + datosReportePromediosMayoresMenores.getAnchoMayor());
 					
 				}
 				

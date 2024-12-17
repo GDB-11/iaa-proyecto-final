@@ -6,8 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import application.core.interfaces.IConfiguracion;
 import application.core.interfaces.IOperacionesCocina;
+import application.core.interfaces.IVentas;
+import application.core.services.Configuracion;
 import application.core.services.OperacionesCocina;
+import application.core.services.Ventas;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -21,6 +25,8 @@ public class ProyectoFinalWindow extends JFrame {
 	private JPanel contentPane;
 	
 	public IOperacionesCocina operacionesCocina = new OperacionesCocina();
+	public IConfiguracion configuracion = new Configuracion();
+	public IVentas ventas = new Ventas(configuracion, operacionesCocina);
 
 	/**
 	 * Launch the application.
@@ -91,7 +97,7 @@ public class ProyectoFinalWindow extends JFrame {
 		JMenuItem mntmVender = new JMenuItem("Vender");
 		mntmVender.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VenderDialog windowVenderDialog = new VenderDialog(operacionesCocina);
+				VenderDialog windowVenderDialog = new VenderDialog(operacionesCocina, ventas);
 				windowVenderDialog.setLocationRelativeTo(mntmVender);
 				windowVenderDialog.setVisible(true);
 			}
@@ -103,7 +109,7 @@ public class ProyectoFinalWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 
-				GenerarReporteDialog windowReporteDialog = new GenerarReporteDialog();
+				GenerarReporteDialog windowReporteDialog = new GenerarReporteDialog(ventas, configuracion, operacionesCocina);
 				windowReporteDialog.setLocationRelativeTo(mntmReportes);
 				windowReporteDialog.setVisible(true);
 			}

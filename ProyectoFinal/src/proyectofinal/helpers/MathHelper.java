@@ -12,4 +12,10 @@ public class MathHelper {
         
         return df.format(number);
     }
+
+    public static String formatPercentage(Number number) {
+        DecimalFormat df = new DecimalFormat("#,##0.00%");
+        df.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.US));
+        return df.format(number);
+    }
 }

@@ -5,10 +5,18 @@ import java.math.BigDecimal;
 public class Venta {
     private String Modelo;
     private BigDecimal PrecioUnitario;
-    //private BigDecimal ImporteDescuento;
     private BigDecimal PorcentajeDescuento;
     private Integer Cantidad;
     private String Obsequio;
+
+    public Venta(String modelo, BigDecimal precioUnitario, BigDecimal porcentajeDescuento, Integer cantidad, String obsequio) {
+        super();
+        this.Modelo =  modelo;
+        this.PrecioUnitario = precioUnitario;
+        this.PorcentajeDescuento = porcentajeDescuento;
+        this.Cantidad = cantidad;
+        this.Obsequio = obsequio;
+    }
 
     public void setModelo(String modelo) {
         this.Modelo = modelo;
@@ -47,7 +55,7 @@ public class Venta {
     }
 
     public BigDecimal getImporteDescuento() {
-        return this.PrecioUnitario.multiply(this.PorcentajeDescuento);
+        return getImporteTotal().multiply(this.PorcentajeDescuento);
     }
 
     public Integer getCantidad() {

@@ -3,7 +3,9 @@ package proyectofinal;
 import javax.swing.JDialog;
 
 import application.core.interfaces.IOperacionesCocina;
+import application.core.interfaces.IVentas;
 import infrastructure.core.models.Cocina;
+import infrastructure.core.models.Venta;
 import proyectofinal.helpers.ElementosHelper;
 import proyectofinal.helpers.MathHelper;
 
@@ -31,7 +33,7 @@ public class VenderDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public VenderDialog(IOperacionesCocina operacionesCocina) {
+	public VenderDialog(IOperacionesCocina operacionesCocina, IVentas ventas) {
 		setResizable(false);
 		setTitle("Vender");
 		setBounds(100, 100, 450, 428);
@@ -88,12 +90,12 @@ public class VenderDialog extends JDialog {
 		JButton btnVender = new JButton("Vender");
 		btnVender.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//DECLARACIÓN DE VARIABLES LOCALES				
-				int cantidadVendida;				
-				BigDecimal importeCompra = new BigDecimal(0);
+				//DECLARACIÓN DE VARIABLES LOCALES
+				Venta venta;
+				int cantidadVendida;
+				//BigDecimal importeCompra = new BigDecimal(0);
 
 				//ENTRADA DE DATOS
-				cocinaSeleccionada = ElementosHelper.getComboboxTexto(comboxModelo);
 				cantidadVendida = ElementosHelper.getTextFieldIntValue(txtCantidad);				
 
 				//PROCESO
@@ -106,14 +108,18 @@ public class VenderDialog extends JDialog {
 					return;
 				}
 
-				importeCompra = importeCompra.add(cocina.getPrecio().multiply(new BigDecimal(cantidadVendida)));
+				venta = ventas.agregarVenta(cocina.getModelo(), cocina.getPrecio(), cantidadVendida);
+				//importeCompra = importeCompra.add(cocina.getPrecio().multiply(new BigDecimal(cantidadVendida)));
 
 				//MOSTRAR RESULTADOS
 				ElementosHelper.setTextAreaNewValue(textAreaOutput, "BOLETA DE VENTA");
 				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Modelo\t\t: " + cocina.getModelo());
-				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Precio S/\t\t: " + MathHelper.formatDecimal(cocina.getPrecio()));
+				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Precio \t\t: S/ " + MathHelper.formatDecimal(cocina.getPrecio()));
 				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Cantidad\t\t: " + cantidadVendida);
-				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Importe compra\t: " + MathHelper.formatDecimal(importeCompra));
+				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Importe compra\t: S/ " + MathHelper.formatDecimal(venta.getImporteTotal()));
+				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Importe descuento\t: S/ " + MathHelper.formatDecimal(venta.getImporteDescuento()));
+				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Importe pagar\t\t: S/ " + MathHelper.formatDecimal(venta.getImportePagar()));
+				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Obsequio\t\t: " + venta.getObsequio());
 			}
 		});
 		btnVender.setBounds(333, 7, 105, 27);

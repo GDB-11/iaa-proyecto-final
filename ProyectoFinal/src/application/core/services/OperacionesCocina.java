@@ -41,4 +41,16 @@ public class OperacionesCocina implements IOperacionesCocina
 
         return null;
     }
+
+    public BigDecimal obtenerPrecioPromedio() {
+        BigDecimal sumaPrecios = new BigDecimal(0);
+
+        for (int i = 0; i < cocinas.size(); i++) {
+            Cocina cocina = cocinas.get(i);
+
+            sumaPrecios = sumaPrecios.add(cocina.getPrecio());
+        }
+
+        return sumaPrecios.divide(new BigDecimal(cocinas.size()));
+    }
 }
