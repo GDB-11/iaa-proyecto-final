@@ -1,10 +1,4 @@
-INDEX VERSION 1.134+D:\CIBERTEC\ALGORITMO\Trabajo_final\iaa-proyecto-final\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.134+/home/gian/repos/iaa-proyecto-final/.metadata/.plugins/org.eclipse.jdt.core
 1865797976.index
-<<<<<<< HEAD
-2096262954.index
+3241593540.index
 14942084.index
-2067988616.index
-=======
-3178252356.index
-2532141338.index
->>>>>>> 4391513bdb723320ae56e3236ce679462ff8d9d9
