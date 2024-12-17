@@ -3,7 +3,6 @@ package proyectofinal.helpers;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import java.math.BigDecimal;
 
 public class ElementosHelper {
     public static String getComboboxTexto(JComboBox comboBox) {
@@ -41,6 +40,14 @@ public class ElementosHelper {
             return Integer.parseInt(textField.getText());
         } catch (Exception e) {
             return 0;
+        }        
+    }
+
+    public static Double getTextFieldDoubleValue(JTextField textField) {
+        try {
+            return Double.parseDouble(textField.getText());
+        } catch (Exception e) {
+            return 0D;
         }        
     }
     

@@ -69,4 +69,36 @@ public class Configuracion implements IConfiguracion {
     public BigDecimal obtenerCuotaDiariaVentas() {
         return configuracionVenta.getCuotaDiariaVentas();
     }
+
+    public BigDecimal obtenerPrimerDescuento() {
+        return descuentos.get(0).getValor();
+    }
+
+    public BigDecimal obtenerSegundoDescuento() {
+        return descuentos.get(1).getValor();
+    }
+
+    public BigDecimal obtenerTercerDescuento() {
+        return descuentos.get(2).getValor();
+    }
+
+    public BigDecimal obtenerCuartoDescuento() {
+        return descuentos.get(3).getValor();
+    }
+
+    public void cambiarPrimerDescuento(BigDecimal valor) {
+        descuentos.get(0).setValor(valor);
+    }
+
+    public void cambiarSegundoDescuento(BigDecimal valor) {
+        descuentos.get(1).setValor(valor);
+    }
+
+    public void cambiarTercerDescuento(BigDecimal valor) {
+        descuentos.get(2).setValor(valor);
+    }
+
+    public void cambiarCuartoDescuento(BigDecimal valor) {
+        descuentos.get(3).setValor(valor);
+    }
 }

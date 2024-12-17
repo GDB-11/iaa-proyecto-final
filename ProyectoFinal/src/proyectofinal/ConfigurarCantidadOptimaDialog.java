@@ -33,6 +33,7 @@ public class ConfigurarCantidadOptimaDialog extends JDialog {
 		txtCantidadOptima.setBounds(273, 10, 114, 21);
 		getContentPane().add(txtCantidadOptima);
 		txtCantidadOptima.setColumns(10);
+		txtCantidadOptima.setText(configuracion.obtenerCantidadOptimaVentas().toString());
 
 		JLabel lblError = new JLabel("");
 		lblError.setForeground(new Color(224, 27, 36));

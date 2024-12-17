@@ -18,4 +18,10 @@ public class MathHelper {
         df.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.US));
         return df.format(number);
     }
+
+    public static String formatPercentageWithoutSymbol(Number number) {
+        DecimalFormat df = new DecimalFormat("#,##0.########");
+        df.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.US));
+        return df.format(number.doubleValue() * 100);
+    }
 }

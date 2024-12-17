@@ -1,6 +1,7 @@
 package application.core.services;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +52,6 @@ public class OperacionesCocina implements IOperacionesCocina
             sumaPrecios = sumaPrecios.add(cocina.getPrecio());
         }
 
-        return sumaPrecios.divide(new BigDecimal(cocinas.size()));
+        return sumaPrecios.divide(new BigDecimal(cocinas.size()), 10, RoundingMode.HALF_UP);
     }
 }

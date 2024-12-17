@@ -1,6 +1,7 @@
 package infrastructure.core.models.Reporte;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class DatosReporteVentasPorModelo {
     private String Modelo;
@@ -52,6 +53,7 @@ public class DatosReporteVentasPorModelo {
         if (this.ImporteTotalVendido.compareTo(new BigDecimal(0)) == 0) {
             return new BigDecimal(0);
         }
-        return getImporteTotalVendido().divide(cuotaDiariaVentas);
+        
+        return getImporteTotalVendido().divide(cuotaDiariaVentas, 2, RoundingMode.HALF_UP);
     }
 }

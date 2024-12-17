@@ -140,7 +140,7 @@ public class ProyectoFinalWindow extends JFrame {
 		mntmDescuentos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				ConfigurarDescuentosDialog windowDescuentosDialog = new ConfigurarDescuentosDialog();
+				ConfigurarDescuentosDialog windowDescuentosDialog = new ConfigurarDescuentosDialog(configuracion);
 				windowDescuentosDialog.setLocationRelativeTo(mntmDescuentos);
 				windowDescuentosDialog.setVisible(true);
 			}

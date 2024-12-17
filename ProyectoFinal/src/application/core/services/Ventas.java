@@ -1,6 +1,7 @@
 package application.core.services;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -196,7 +197,7 @@ public class Ventas implements IVentas {
             anchoMenor = Math.min(anchoMenor, cocina.getAncho());
         }
 
-        precioPromedio = sumaPrecio.divide(new BigDecimal(cocinas.size()));
+        precioPromedio = sumaPrecio.divide(new BigDecimal(cocinas.size()), 2, RoundingMode.HALF_UP);
         anchoPromedio = sumaAncho / cocinas.size();
 
         //RETORNAR RESULTADO

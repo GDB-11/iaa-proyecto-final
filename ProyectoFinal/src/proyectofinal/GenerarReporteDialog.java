@@ -46,7 +46,7 @@ public class GenerarReporteDialog extends JDialog {
 	 */
 	public GenerarReporteDialog(IVentas ventas, IConfiguracion configuracion, IOperacionesCocina operacionesCocina) {
 		setTitle("Generar Reportes");
-		setBounds(100, 100, 536, 399);
+		setBounds(100, 100, 625, 399);
 		getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Tipo de Reporte ");
@@ -110,25 +110,26 @@ public class GenerarReporteDialog extends JDialog {
 
 					textArea.setText("PROMEDIOS, MENORES Y MAYORES" + "\n\n");
 					textArea.append("Precio Promedio\t: S/ " + datosReportePromediosMayoresMenores.getPrecioPromedio() + "\n");
-					textArea.append("Precio menor\t: S/ " + datosReportePromediosMayoresMenores.getPrecioMenor() + "\n");
-					textArea.append("Precio mayor\t: S/ " + datosReportePromediosMayoresMenores.getPrecioMayor() + "\n\n");					
+					textArea.append("Precio menor\t\t: S/ " + datosReportePromediosMayoresMenores.getPrecioMenor() + "\n");
+					textArea.append("Precio mayor\t\t: S/ " + datosReportePromediosMayoresMenores.getPrecioMayor() + "\n\n");					
 					textArea.append("Ancho Promedio\t: " + datosReportePromediosMayoresMenores.getAnchoPromedio() + "\n");
-					textArea.append("Ancho menor\t: " + datosReportePromediosMayoresMenores.getAnchoMenor() + "\n");
-					textArea.append("Ancho mayor\t: " + datosReportePromediosMayoresMenores.getAnchoMayor());
+					textArea.append("Ancho menor\t\t: " + datosReportePromediosMayoresMenores.getAnchoMenor() + "\n");
+					textArea.append("Ancho mayor\t\t: " + datosReportePromediosMayoresMenores.getAnchoMayor());
 					
 				}
 				
 			}
 		});
 		cbTipoReporte.setModel(new DefaultComboBoxModel(new String[] {"[--Seleccione--]", "Ventas por modelo", "Ventas en relacion a la venta optima", "Precios en relacion al precio promedio", "Promedios, menores y mayores"}));
-		cbTipoReporte.setBounds(152, 42, 175, 22);
+		cbTipoReporte.setBounds(152, 42, 290, 22);
 		getContentPane().add(cbTipoReporte);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(22, 98, 471, 251);
+		scrollPane.setBounds(22, 98, 591, 251);
 		getContentPane().add(scrollPane);
 		
 		textArea = new JTextArea();
+		textArea.setEditable(false);
 		scrollPane.setViewportView(textArea);
 		
 		JButton btnNewButton = new JButton("Cerrar");
@@ -138,7 +139,7 @@ public class GenerarReporteDialog extends JDialog {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(382, 42, 111, 23);
+		btnNewButton.setBounds(502, 42, 111, 23);
 		getContentPane().add(btnNewButton);
 
 	}
