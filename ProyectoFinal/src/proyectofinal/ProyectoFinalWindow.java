@@ -148,6 +148,14 @@ public class ProyectoFinalWindow extends JFrame {
 		mnConfiguracion.add(mntmDescuentos);
 		
 		JMenuItem mntmConfigurarObsequios = new JMenuItem("Configurar Obsequios");
+		mntmConfigurarObsequios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				ConfigurarObsequiosDialog windowConfigurarObsequiosDialog = new ConfigurarObsequiosDialog(configuracion);
+				windowConfigurarObsequiosDialog.setLocationRelativeTo(mntmConfigurarObsequios);
+				windowConfigurarObsequiosDialog.setVisible(true);
+			}
+		});
 		mnConfiguracion.add(mntmConfigurarObsequios);
 		
 		JMenuItem mntmConfigurarCantidadOptima = new JMenuItem("Configurar Cantidad Óptima");

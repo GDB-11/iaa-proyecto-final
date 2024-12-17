@@ -101,4 +101,28 @@ public class Configuracion implements IConfiguracion {
     public void cambiarCuartoDescuento(BigDecimal valor) {
         descuentos.get(3).setValor(valor);
     }
+
+    public String obtenerPrimerObsequio() {
+        return obsequios.get(0).getNombreObsequio();
+    }
+
+    public String obtenerSegundoObsequio() {
+        return obsequios.get(1).getNombreObsequio();
+    }
+
+    public String obtenerTercerObsequio() {
+        return obsequios.get(2).getNombreObsequio();
+    }
+
+    public void cambiarPrimerObsequio(String obsequio) {
+        obsequios.get(0).setNombreObsequio(obsequio);
+    }
+
+    public void cambiarSegundoObsequio(String obsequio) {
+        obsequios.get(1).setNombreObsequio(obsequio);
+    }
+
+    public void cambiarTercerObsequio(String obsequio) {
+        obsequios.get(2).setNombreObsequio(obsequio);
+    }
 }

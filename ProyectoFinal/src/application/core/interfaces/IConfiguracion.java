@@ -17,4 +17,10 @@ public interface IConfiguracion {
     public void cambiarSegundoDescuento(BigDecimal valor);
     public void cambiarTercerDescuento(BigDecimal valor);
     public void cambiarCuartoDescuento(BigDecimal valor);
+    public String obtenerPrimerObsequio();
+    public String obtenerSegundoObsequio();
+    public String obtenerTercerObsequio();
+    public void cambiarPrimerObsequio(String obsequio);
+    public void cambiarSegundoObsequio(String obsequio);
+    public void cambiarTercerObsequio(String obsequio);
 }
