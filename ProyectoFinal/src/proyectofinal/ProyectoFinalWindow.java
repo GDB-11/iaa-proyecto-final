@@ -147,6 +147,22 @@ public class ProyectoFinalWindow extends JFrame {
 		});
 		mnConfiguracion.add(mntmDescuentos);
 		
+		JMenuItem mntmConfigurarObsequios = new JMenuItem("Configurar Obsequios");
+		mnConfiguracion.add(mntmConfigurarObsequios);
+		
+		JMenuItem mntmConfigurarCantidadOptima = new JMenuItem("Configurar Cantidad Óptima");
+		mntmConfigurarCantidadOptima.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConfigurarCantidadOptimaDialog configurarCantidadOptimaDialog = new ConfigurarCantidadOptimaDialog(configuracion);
+				configurarCantidadOptimaDialog.setLocationRelativeTo(mntmConfigurarCantidadOptima);
+				configurarCantidadOptimaDialog.setVisible(true);
+			}
+		});
+		mnConfiguracion.add(mntmConfigurarCantidadOptima);
+		
+		JMenuItem mntmConfigurarCuotaDiaria = new JMenuItem("Configurar Cuota Diaria");
+		mnConfiguracion.add(mntmConfigurarCuotaDiaria);
+		
 		JMenu mnAyuda = new JMenu("Ayuda");
 		menuProyecto.add(mnAyuda);
 	}

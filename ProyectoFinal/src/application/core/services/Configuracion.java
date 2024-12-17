@@ -54,6 +54,14 @@ public class Configuracion implements IConfiguracion {
         return "";
     }
 
+    public void cambiarCantidadOptimaVentas(Integer nuevaCantidadOptimaVentas) {
+        configuracionVenta.setCantidadOptimaVentas(nuevaCantidadOptimaVentas);
+    }
+
+    public void cambiarCuotaDiariaVentas(Double nuevaCuotaDiariaVentas) {
+        configuracionVenta.setCuotaDiariaVentas(nuevaCuotaDiariaVentas);
+    }
+
     public Integer obtenerCantidadOptimaVentas() {
         return configuracionVenta.getCantidadOptimaVentas();
     }
