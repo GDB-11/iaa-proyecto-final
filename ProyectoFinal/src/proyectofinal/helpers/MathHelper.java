@@ -24,4 +24,18 @@ public class MathHelper {
         df.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.US));
         return df.format(number.doubleValue() * 100);
     }
+
+    public static Double parseToDouble(String input) {
+        if (input == null || input.trim().isEmpty()) {
+            return 0.0;
+        }
+        
+        String cleanNumber = input.replace(",", "").trim();
+        
+        try {
+            return Double.parseDouble(cleanNumber);
+        } catch (NumberFormatException e) {
+            return 0D;
+        }
+    }
 }

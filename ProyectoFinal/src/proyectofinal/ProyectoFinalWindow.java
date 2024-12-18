@@ -79,7 +79,7 @@ public class ProyectoFinalWindow extends JFrame {
 		mntmConsultarCocina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ConsultarCocina windowConsultarCocina = new ConsultarCocina(operacionesCocina);
-				windowConsultarCocina.setLocationRelativeTo(mntmConsultarCocina);
+				windowConsultarCocina.setLocationRelativeTo(ProyectoFinalWindow.this);
 				windowConsultarCocina.setVisible(true);
 			}
 		});
@@ -91,7 +91,7 @@ public class ProyectoFinalWindow extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 				ModificarCocinaDialog dialogModificarCocina = new ModificarCocinaDialog(operacionesCocina);
-				dialogModificarCocina.setLocationRelativeTo(mntmModificarCocina);
+				dialogModificarCocina.setLocationRelativeTo(ProyectoFinalWindow.this);
 				dialogModificarCocina.setVisible(true);
 			}
 		});
@@ -102,7 +102,7 @@ public class ProyectoFinalWindow extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 				ListarCocinasDialog dialogListarCocinas = new ListarCocinasDialog(operacionesCocina);
-				dialogListarCocinas.setLocationRelativeTo(mntmListarCocinas);
+				dialogListarCocinas.setLocationRelativeTo(ProyectoFinalWindow.this);
 				dialogListarCocinas.setVisible(true);
 			}
 		});
@@ -115,7 +115,7 @@ public class ProyectoFinalWindow extends JFrame {
 		mntmVender.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VenderDialog windowVenderDialog = new VenderDialog(operacionesCocina, ventas);
-				windowVenderDialog.setLocationRelativeTo(mntmVender);
+				windowVenderDialog.setLocationRelativeTo(ProyectoFinalWindow.this);
 				windowVenderDialog.setVisible(true);
 			}
 		});
@@ -127,7 +127,7 @@ public class ProyectoFinalWindow extends JFrame {
 				
 
 				GenerarReporteDialog windowReporteDialog = new GenerarReporteDialog(ventas, configuracion, operacionesCocina);
-				windowReporteDialog.setLocationRelativeTo(mntmReportes);
+				windowReporteDialog.setLocationRelativeTo(ProyectoFinalWindow.this);
 				windowReporteDialog.setVisible(true);
 			}
 		});
@@ -141,7 +141,7 @@ public class ProyectoFinalWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				ConfigurarDescuentosDialog windowDescuentosDialog = new ConfigurarDescuentosDialog(configuracion);
-				windowDescuentosDialog.setLocationRelativeTo(mntmDescuentos);
+				windowDescuentosDialog.setLocationRelativeTo(ProyectoFinalWindow.this);
 				windowDescuentosDialog.setVisible(true);
 			}
 		});
@@ -152,7 +152,7 @@ public class ProyectoFinalWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				ConfigurarObsequiosDialog windowConfigurarObsequiosDialog = new ConfigurarObsequiosDialog(configuracion);
-				windowConfigurarObsequiosDialog.setLocationRelativeTo(mntmConfigurarObsequios);
+				windowConfigurarObsequiosDialog.setLocationRelativeTo(ProyectoFinalWindow.this);
 				windowConfigurarObsequiosDialog.setVisible(true);
 			}
 		});
@@ -162,13 +162,20 @@ public class ProyectoFinalWindow extends JFrame {
 		mntmConfigurarCantidadOptima.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ConfigurarCantidadOptimaDialog configurarCantidadOptimaDialog = new ConfigurarCantidadOptimaDialog(configuracion);
-				configurarCantidadOptimaDialog.setLocationRelativeTo(mntmConfigurarCantidadOptima);
+				configurarCantidadOptimaDialog.setLocationRelativeTo(ProyectoFinalWindow.this);
 				configurarCantidadOptimaDialog.setVisible(true);
 			}
 		});
 		mnConfiguracion.add(mntmConfigurarCantidadOptima);
 		
 		JMenuItem mntmConfigurarCuotaDiaria = new JMenuItem("Configurar Cuota Diaria");
+		mntmConfigurarCuotaDiaria.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConfigurarCuotaDiariaDialog configurarCuotaDiariaDialog = new ConfigurarCuotaDiariaDialog(configuracion);
+				configurarCuotaDiariaDialog.setLocationRelativeTo(ProyectoFinalWindow.this);
+				configurarCuotaDiariaDialog.setVisible(true);
+			}
+		});
 		mnConfiguracion.add(mntmConfigurarCuotaDiaria);
 		
 		JMenu mnAyuda = new JMenu("Ayuda");
