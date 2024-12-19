@@ -24,3 +24,177 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY ch.qos.logback.classic 1 0 2024-12-17 00:05:21.140
 !MESSAGE Logback config file: /home/gian/repos/iaa-proyecto-final/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2024-12-17 01:29:19.641
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2024-12-17 01:29:19.641
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2024-12-17 01:29:19.641
+!MESSAGE "Git integration for Eclipse" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2024-12-17 01:29:19.641
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE Software being installed: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE Software currently installed: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.641
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.jar 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.jar 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.641
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE From: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.group [7.1.0,7.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.641
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE From: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.0.0.202409031743-r,7.0.0.202409031743-r], filter=(org.eclipse.update.install.features=true)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.641
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE From: Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.641
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.1.0.202411261347-r,7.1.0.202411261347-r], filter=(org.eclipse.update.install.features=true)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2024-12-17 01:29:19.643
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2024-12-17 01:29:19.643
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2024-12-17 01:29:19.643
+!MESSAGE "Git integration for Eclipse" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2024-12-17 01:29:19.643
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE Software being installed: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE Software currently installed: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.643
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.jar 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.jar 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.643
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE From: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.group [7.1.0,7.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.643
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE From: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.0.0.202409031743-r,7.0.0.202409031743-r], filter=(org.eclipse.update.install.features=true)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.643
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE From: Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.643
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.1.0.202411261347-r,7.1.0.202411261347-r], filter=(org.eclipse.update.install.features=true)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2024-12-17 01:29:19.649
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2024-12-17 01:29:19.650
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2024-12-17 01:29:19.650
+!MESSAGE "Git integration for Eclipse" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2024-12-17 01:29:19.650
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Software being installed: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Software currently installed: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.jar 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.jar 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE From: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.group [7.1.0,7.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE From: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.0.0.202409031743-r,7.0.0.202409031743-r], filter=(org.eclipse.update.install.features=true)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE From: Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.1.0.202411261347-r,7.1.0.202411261347-r], filter=(org.eclipse.update.install.features=true)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2024-12-17 01:29:19.650
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2024-12-17 01:29:19.650
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2024-12-17 01:29:19.650
+!MESSAGE "Git integration for Eclipse" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2024-12-17 01:29:19.650
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Software being installed: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Software currently installed: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.jar 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.jar 7.1.0.202411261347-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE From: Git integration for Eclipse 7.1.0.202411261347-r (org.eclipse.egit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.group [7.1.0,7.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE From: Java implementation of Git 7.0.0.202409031743-r (org.eclipse.jgit.feature.group 7.0.0.202409031743-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.0.0.202409031743-r,7.0.0.202409031743-r], filter=(org.eclipse.update.install.features=true)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2024-12-17 01:29:19.650
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE From: Java implementation of Git 7.1.0.202411261347-r (org.eclipse.jgit.feature.group 7.1.0.202411261347-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2024-12-17 01:29:19.650
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.jgit.feature.jar [7.1.0.202411261347-r,7.1.0.202411261347-r], filter=(org.eclipse.update.install.features=true)
+!SESSION 2024-12-17 01:40:32.278 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.5
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/home/gian/repos/iaa-proyecto-final/
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-17 01:40:34.204
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-17 01:40:40.915
+!MESSAGE Logback config file: /home/gian/repos/iaa-proyecto-final/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+!SESSION 2024-12-17 12:26:00.118 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=21.0.5
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-17 12:26:01.130
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-17 12:26:18.958
+!MESSAGE Logback config file: /home/gian/repos/iaa-proyecto-final/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
