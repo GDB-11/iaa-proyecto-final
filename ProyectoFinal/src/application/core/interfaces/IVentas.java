@@ -16,4 +16,7 @@ public interface IVentas {
     public List<DatosReporteVentasVentaOptima> obtenerDatosReporteVentasVentaOptima();
     public List<DatosReporteVentasPrecioPromedio> obtenerDatosReporteVentasPrecioPromedio();
     public DatosReportePromediosMayoresMenores obtenerDatosReportePromediosMayoresMenores();
+    public Integer getCantidadVentas();
+    public BigDecimal getImporteTotalGeneralAcumulado();
+    public BigDecimal getAporteCuotaDiariaGeneral();
 }

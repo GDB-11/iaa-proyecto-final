@@ -210,4 +210,30 @@ public class Ventas implements IVentas {
             anchoMenor
         );
     }
+
+    public Integer getCantidadVentas() {
+        return ventas.size();
+    }
+
+    public BigDecimal getImporteTotalGeneralAcumulado() {
+        BigDecimal importeTotalGeneralAcumulado = new BigDecimal(0);
+
+        for (int i = 0; i < ventas.size(); i++) {
+            Venta venta = ventas.get(i);
+
+            importeTotalGeneralAcumulado = importeTotalGeneralAcumulado.add(venta.getImportePagar());
+        }
+
+        return importeTotalGeneralAcumulado;
+    }
+
+    public BigDecimal getAporteCuotaDiariaGeneral() {
+        BigDecimal importeTotalGeneralAcumulado = getImporteTotalGeneralAcumulado();
+
+        if (importeTotalGeneralAcumulado.compareTo(new BigDecimal(0)) == 0) {
+            return new BigDecimal(0);
+        }
+        
+        return importeTotalGeneralAcumulado.divide(_configuracion.obtenerCuotaDiariaVentas(), 2, RoundingMode.HALF_UP);
+    }
 }

@@ -21,6 +21,7 @@ public class ListarCocinasDialog extends JDialog {
 	 * Create the dialog.
 	 */
 	public ListarCocinasDialog(IOperacionesCocina operacionesCocina) {
+		setTitle("Listar cocinas");
 		setBounds(100, 100, 450, 333);
 		getContentPane().setLayout(null);
 		

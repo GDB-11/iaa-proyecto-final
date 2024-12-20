@@ -17,7 +17,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.math.BigDecimal;
 import java.awt.event.ActionEvent;
 
 public class VenderDialog extends JDialog {
@@ -120,6 +119,10 @@ public class VenderDialog extends JDialog {
 				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Importe descuento\t: S/ " + MathHelper.formatDecimal(venta.getImporteDescuento()));
 				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Importe pagar\t\t: S/ " + MathHelper.formatDecimal(venta.getImportePagar()));
 				ElementosHelper.printTextAreaNewLine(textAreaOutput, "Obsequio\t\t: " + venta.getObsequio());
+
+				AvanceVentasDialog avanceVentasDialog = new AvanceVentasDialog(ventas.getCantidadVentas(), ventas.getImporteTotalGeneralAcumulado(), ventas.getAporteCuotaDiariaGeneral());
+				avanceVentasDialog.setLocationRelativeTo(VenderDialog.this);
+				avanceVentasDialog.setVisible(true);
 			}
 		});
 		btnVender.setBounds(333, 7, 105, 27);
