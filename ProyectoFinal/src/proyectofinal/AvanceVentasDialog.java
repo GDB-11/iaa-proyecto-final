@@ -29,6 +29,13 @@ public class AvanceVentasDialog extends JDialog {
         infoPanel.add(ventaLabel);
         infoPanel.add(importeLabel);
         infoPanel.add(porcentajeLabel);
+
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JButton acceptButton = new JButton("Aceptar");
+        acceptButton.addActionListener(e -> dispose());
+        buttonPanel.add(acceptButton);
+        
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
         
         mainPanel.add(infoPanel, BorderLayout.CENTER);
         
